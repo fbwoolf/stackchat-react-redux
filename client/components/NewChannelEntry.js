@@ -22,7 +22,7 @@ function NewChannelEntry (props) {
   );
 }
 
-const mapStateToProps = function(state) {
+const mapStateToProps = function(state,ownProps) {
   return {
     newChannelEntry: state.newChannelEntry
   };
@@ -36,7 +36,9 @@ const mapDispatchToProps = function(dispatch, ownProps) {
     handleSubmit(event) {
       event.preventDefault();
       const channelName = event.target.channelName.value;
-      dispatch(postChannel({ name: channelName}));
+      dispatch(postChannel({ name: channelName}, ownProps.history));
+      dispatch(writeChannel(''));
+
     }
   }
 }
