@@ -35,8 +35,8 @@ const mapDispatchToProps = function(dispatch, ownProps) {
     },
     handleSubmit(event) {
       event.preventDefault();
-      const name = event.target.channelName.value;
-      dispatch(postChannel({ name: name}));
+      const channelName = event.target.channelName.value;
+      dispatch(postChannel({ name: channelName}));
     }
   }
 }

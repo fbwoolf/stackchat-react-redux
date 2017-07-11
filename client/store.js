@@ -182,7 +182,7 @@ function reducer (state = initialState, action) {
     case GET_CHANNEL:
       return {
         ...state,
-        channels: [...action.channels, action.channel]
+        channels: [...state.channels, action.channel]
     };
     default:
       return state;
