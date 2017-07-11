@@ -12,7 +12,7 @@ const initialState = {
   name: 'Reggie',
   newMessageEntry: '',
   channels: [],
-  newChannelEntry: '' 
+  newChannelEntry: ''
 };
 
 // ACTION TYPES
@@ -52,7 +52,7 @@ export function getChannels (channels) {
   return action;
 }
 
-export function addChannel (name) {
+export function addChannel (channelName) {
   const action = { type: ADD_CHANNEL, channelName };
   return action;
 }
