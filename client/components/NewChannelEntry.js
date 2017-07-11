@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { addChannel, postChannel } from '../store';
+import { writeChannel, postChannel } from '../store';
 
 function NewChannelEntry (props) {
   return (
@@ -30,8 +30,8 @@ const mapStateToProps = function(state) {
 
 const mapDispatchToProps = function(dispatch, ownProps) {
   return {
-     handleChange(event) {
-      dispatch(addChannel(event.target.value))
+    handleChange(event) {
+      dispatch(writeChannel(event.target.value))
     },
     handleSubmit(event) {
       event.preventDefault();
