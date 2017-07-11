@@ -14,12 +14,16 @@ function ChannelList (props) {
 
     return (
       <ul>
-        <li>
-          <NavLink to={"URL_GOES_HERE"} activeClassName="active">
-            <span># really_random</span>
-            <span className="badge"></span>
+      {props.channels.map(channel =>
+        <li key={channel.id}>
+          <NavLink to={`/channels/${channel.id}`} activeClassName="active">
+            <span>{channel.name}</span>
+            <span className="badge">{props.messages.filter(message => (message.channelId === channel.id)).length}</span>
           </NavLink>
         </li>
+
+      )}
+
         <li>
           <NavLink to="/new-channel">Create a channel...</NavLink>
         </li>
@@ -28,8 +32,11 @@ function ChannelList (props) {
 }
 
 const mapStateToProps = function(state) {
-  return {};
+  return {
+    channels: state.channels,
+    messages: state.messages
+  };
 }
 
 const ChannelListContainer = connect(mapStateToProps)(ChannelList)
-export default ChannelListContainer
+export default ChannelListContainer;
