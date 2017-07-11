@@ -10,6 +10,10 @@ socket.on('connect', () => {
     store.dispatch(getMessage(message));
   });
 
+  socket.on('new-channel', channel => {
+    store.dispatch(addChannel(channel));
+  });
+
 });
 
 export default socket;
