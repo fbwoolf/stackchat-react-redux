@@ -38,7 +38,6 @@ const mapDispatchToProps = function(dispatch, ownProps) {
       const channelName = event.target.channelName.value;
       dispatch(postChannel({ name: channelName}, ownProps.history));
       dispatch(writeChannel(''));
-
     }
   }
 }
